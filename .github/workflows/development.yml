@@ -20,13 +20,13 @@ jobs:
       - name: Use Node 12.x
         uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: '17.x'
 
       - name: List files in the repository
         run: |
-          npm install --force
+          npm install 
 
-      - name: build angular file
+      - name: build vite file
         run:  npm run build
 
       - run: echo "🍏 This job's status is ${{ job.status }}."
@@ -40,8 +40,7 @@ jobs:
       - name: install composer dependencies
         run: | 
           composer install --no-dev --no-interaction  --prefer-dist
-      - name: change folder to front end
-        run:  cd ..
+      
 
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
