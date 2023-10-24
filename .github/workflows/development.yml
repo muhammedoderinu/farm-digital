@@ -24,7 +24,7 @@ jobs:
 
       - name: List files in the repository
         run: |
-          npm install --force
+          npm install 
 
       - name: build angular file
         run:  npm run build
@@ -39,9 +39,8 @@ jobs:
 
       - name: install composer dependencies
         run: | 
+        
           composer install --no-dev --no-interaction  --prefer-dist
-      - name: change folder to front end
-
 
       - name: create deployment artifact
         env:
@@ -77,7 +76,7 @@ jobs:
       with:
         host: ${{ matrix.server.ip}}
         username: ${{ matrix.server.username}}
-        key: ${{ secrets.HEROKU_API_KEY}}
+        key: ${{ secrets.SSH_PRIVATE_KEY}}
         port: ${{ matrix.server.port}}
         source: ${{ github.sha}}.tar.gz
         target: ${{ matrix.server.path}}/artifacts

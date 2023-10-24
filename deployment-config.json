@@ -1,10 +1,10 @@
 [{
     "name": "server-1",
-    "ip": "https://cree8-2c2bc178d328.herokuapp.com/",
+    "ip": "16.171.231.175",
     "username": "root",
     "port": "22",
     "beforeHooks": "",
     "afterHooks": "",
-    "path": "/var/www/html/cree8"
+    "path": "/var/www/html/main"
 
 }]
