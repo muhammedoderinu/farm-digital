@@ -168,10 +168,10 @@ jobs:
           envs: GITHUB_SHA,RELEASE_PATH, ACTIVE_RELEASE_PATH, STORAGE_PATH,BASE_PATH, LARAVEL_ENV
           script: |
             sudo printf "%s" "$LARAVEL_ENV" > "${BASE_PATH}/.env"
-            sudo ln -s -f ${BASE_PATH}/.env ${RELEASE_PATH}/farmer-backend
-            sudo ln -s -f $STORAGE_PATH ${RELEASE_PATH}/farmer-backend
+            sudo ln -s -f ${BASE_PATH}/.env ${RELEASE_PATH}
+            sudo ln -s -f $STORAGE_PATH ${RELEASE_PATH}
             sudo ln -s -n -f $RELEASE_PATH $ACTIVE_RELEASE_PATH
-            sudo service php8.0-fpm reload
+            sudo service php8.1-fpm reload
 
   run-after-hooks:
     name: "${{ matrix.server.name}}: After hook"
