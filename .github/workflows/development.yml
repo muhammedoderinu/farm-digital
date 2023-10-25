@@ -106,14 +106,14 @@ jobs:
         script: |
           
           sudo mkdir -p  "${{ matrix.server.path}}/releases/${GITHUB_SHA}"
-          tar xzf ${{ matrix.server.path }}/artifacts/${GITHUB_SHA}.tar.gz -C "${{ matrix.server.path }}/releases/${GITHUB_SHA}"
+          sudo tar xzf ${{ matrix.server.path }}/artifacts/${GITHUB_SHA}.tar.gz -C "${{ matrix.server.path }}/releases/${GITHUB_SHA}"
 
-          rm -rf ${{matrix.server.path}}/releases/${GITHUB_SHA}/storage
+          sudo rm -rf ${{matrix.server.path}}/releases/${GITHUB_SHA}/storage
           sudo mkdir -p ${{matrix.server.path}}/storage/{app,public,framework,logs}
           sudo mkdir -p ${{matrix.server.path}}/storage/framework/{cache,sessions,testing,views}
           sudo mkdir -p ${{matrix.server.path}}/storage/framework/cache/data
           sudo chmod -R 0777 ${{matrix.server.path}}/storage
-          ls ${{ matrix.server.path }}/releases/${GITHUB_SHA}
+          sudo ls ${{ matrix.server.path }}/releases/${GITHUB_SHA}
 
   run-before-hooks:
     name: "${{ matrix.server.name}}: Before hook"
