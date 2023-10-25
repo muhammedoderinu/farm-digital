@@ -28,7 +28,7 @@ jobs:
 
       - name: List files in the repository
         run: |
-          npm install --force
+          npm install 
 
       - name: build angular file
         run: npm run build 
@@ -46,10 +46,10 @@ jobs:
 
       - name: install composer dependencies
         run: |
-          cd farmer-backend
+         
           composer install --no-dev --no-interaction  --prefer-dist
       - name: change folder to front end
-        run:  cd ..
+      
 
       - name: list overall files
         run: ls
