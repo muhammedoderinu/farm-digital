@@ -196,7 +196,7 @@ jobs:
       matrix:
         server:  ${{ fromJson(needs.create-deployment-artifacts.outputs.deployment-matrix)}}
     steps: 
-      - name: Run clean up
+      - name: Run clean up.
         uses: appleboy/ssh-action@master
         env:
           RELEASE_PATH: ${{matrix.server.path}}/releases
