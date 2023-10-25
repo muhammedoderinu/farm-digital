@@ -5,6 +5,6 @@
     "port": "22",
     "beforeHooks": "",
     "afterHooks": "",
-    "path": "/var/www/html/main"
+    "path": "ec2_user/var/www/html/main"
 
 }]
