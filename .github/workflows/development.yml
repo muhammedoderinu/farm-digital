@@ -88,7 +88,7 @@ jobs:
         src: ${{ github.sha}}.tar.gz
         host: ${{ matrix.server.ip}}
         remote: ${{ matrix.server.path}}/artifacts
-        username: ${{ matrix.server.username}}
+        user: ${{ matrix.server.username}}
         key: ${{ secrets.AMAZON_SECRET_KEY}}
         port: ${{ matrix.server.port}}
     
