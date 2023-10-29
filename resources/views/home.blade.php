@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-    <head>
-       
-    </head>
+
 
 
 <!-- component -->
@@ -142,7 +139,7 @@
            </h2>
            <div class="inline-flex">
 
-           <a href="#about"><button class="p-2 my-5 mx-2 bg-transparent border-2 bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-green-700 rounded hover:border-indigo-800 font-bold text-green-800 shadow-md transition duration-500 md:text-lg">Learn More</button></a>
+           <a href="/farmdigital"><button class="p-2 my-5 mx-2 bg-transparent border-2 bg-indigo-200 bg-opacity-75 hover:bg-opacity-100 border-green-700 rounded hover:border-indigo-800 font-bold text-green-800 shadow-md transition duration-500 md:text-lg">Learn More</button></a>
            </div>
         </div>
     </div>
