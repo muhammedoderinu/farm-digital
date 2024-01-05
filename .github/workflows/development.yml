@@ -3,7 +3,7 @@ run-name: ${{github.actor}} is testing out Github Actions
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   create-deployment-artifacts:
     name: create deployment artifacts
