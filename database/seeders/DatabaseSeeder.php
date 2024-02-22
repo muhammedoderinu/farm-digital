@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\BlogCategory;
+use App\Models\MediaType;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +16,36 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $mediaTypes = collect(['image', 'video'])->map(fn (string $name) => compact('name'))->all();
+        MediaType::upsert($mediaTypes, 'name');
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $blogCategory = collect($this->category())->map(fn (string $name) => compact('name'))->all();
+        BlogCategory::upsert($blogCategory, 'name');
+
+        User::create($this->admin());
+       
     }
+
+    
+    public function admin()
+    {
+        return 
+        [
+          'username' => 'muhammedoderinu@gmail.com',
+          'password' => bcrypt('muhammedawal')
+        ];
+    }
+
+    public function category()
+    {
+        return[
+            'Technology',
+            'Art',
+            'Environment',
+            'Agriculuture'
+        ];
+    }
+
+
+    
 }
