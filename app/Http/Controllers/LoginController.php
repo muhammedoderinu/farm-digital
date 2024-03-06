@@ -26,7 +26,6 @@ class LoginController extends Controller
             return to_route('form');
         }
 
-        dd('no');
 
         return back();
     }

@@ -42,7 +42,15 @@ class DatabaseSeeder extends Seeder
             'Technology',
             'Art',
             'Environment',
-            'Agriculuture'
+            'Agriculuture',
+            'Fashion',
+            'Travel',
+            'Science',
+            'Religion',
+            'Health',
+            'Lifestyle',
+            'Finance',
+            'Crafts'
         ];
     }
 
