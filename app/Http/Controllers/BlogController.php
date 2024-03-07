@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class BlogController extends Controller
 {
