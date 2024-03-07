@@ -17,9 +17,8 @@ class BlogController extends Controller
         $old_posts = Post::whereDateIsBefore('created_at', Carbon::now()->subDays(7)->endOfWeek())
         -> paginate( $perPage = 2, $columns = ['*'], $pageName = 'blog')->load(['media', 'category']);
 
-        $first_post = Post::orderBy('created_at', 'desc')->first()->load(['media', 'category']);
+        $first_post = Post::orderBy('created_at', 'desc')->paginate(1)->load(['media', 'category']);
 
-        
         
         return view('blog', ['new_posts' => $new_posts,
                             'old_posts' => $old_posts,

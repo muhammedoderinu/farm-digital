@@ -124,7 +124,7 @@
 	
 
 
-@if($first_post != null)
+@if((count($first_post) != 0))
 
 <section class="px-5 py-10 dark:bg-gray-800 dark:text-gray-100">
 	<div class="container md:grid md:grid-cols-12 mx-auto gap-y-6 md:gap-10">
@@ -158,7 +158,7 @@
 				</a>
 			</div>
 		</div>
-		<div onclick="getContent('{{$first_post->id}}')" class="relative flex col-span-12 bg-center bg-no-repeat bg-cover dark:bg-gray-500 xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96" style="background-image: url('{{$first_post->media->url}}');">
+		<div onclick="getContent('{{$first_post[0]->id}}')" class="relative first-post flex col-span-12 bg-center bg-no-repeat bg-cover dark:bg-gray-500 xl:col-span-6 lg:col-span-5 md:col-span-9 min-h-96" style="background-image: url('{{$first_post[0]->media->url}}');">
 			<span class="absolute px-1 pb-2 text-xs font-bold uppercase border-b-2 left-6 top-6 dark:border-violet-400 dark:text-gray-100">cree8 technology</span>
 			<a class="flex flex-col items-center justify-end p-6 text-center sm:p-8 group dark:via-transparent flex-grow-1 bg-gradient-to-b dark:from-gray-900 dark:to-gray-900">
 				<span class="flex items-center mb-4 space-x-2 dark:text-violet-400">
@@ -167,7 +167,7 @@
 					</span>
 					<span class="text-sm font-bold">Latest</span>
 				</span>
-				<h1 rel="noopener noreferrer" href="#" class="font-serif text-2xl font-semibold group-hover:underline dark:text-gray-100">{{$first_post->title}}</h1>
+				<h1 rel="noopener noreferrer" href="#" class="font-serif text-2xl font-semibold group-hover:underline dark:text-gray-100">{{$first_post[0]->title}}</h1>
 			</a>
 		</div>
 		
