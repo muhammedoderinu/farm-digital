@@ -11,8 +11,6 @@ class BlogController extends Controller
         $new_posts = Post::where('created_at', '>', Carbon::now()->subDays(7)->startOfWeek())
         ->paginate(5)->load(['media', 'category']);
 
-        dd($new_posts);
-
 
         $old_posts = Post::where('created_at','<', Carbon::now()->subDays(7)->startOfWeek())
         -> paginate(5)->load(['media', 'category']);
