@@ -39,3 +39,5 @@ Route::post('login', [LoginController::class, 'store']);
 Route::get('admin/login', function(){
     return view('login');
 })->name('login');
+
+Route::get('old-post', [BlogController::class, 'show']);

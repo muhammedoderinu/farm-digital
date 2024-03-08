@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
@@ -22,4 +23,14 @@ class BlogController extends Controller
                             'old_posts' => $old_posts,
                             'first_post' => $first_post]);
     }
+
+    public function show(Request $request)
+    {
+        $posts = Post::where('created_at', '<', Carbon::now()->subDays(7)->startOfWeek())
+        ->paginate(5)->load(['media', 'category']);
+
+        return view('see_more_content', ['posts' => $posts]);
+    }
 }
+
+
