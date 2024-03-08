@@ -8,10 +8,12 @@ use Carbon\Carbon;
 class BlogController extends Controller
 {
     public function index(){
-        $new_posts = Post::whereDateIsAfter('created_at', Carbon::now()->subDays(7)->endOfWeek())
+        $new_posts = Post::whereDateIsAfter('created_at', Carbon::now()->subDays(7)->startOfWeek())
         ->paginate(5)->load(['media', 'category']);
 
-        $old_posts = Post::whereDateIsBefore('created_at', Carbon::now()->subDays(7)->endOfWeek())
+        dd(Carbon::now()->subDays(7)->startOfWeek());
+
+        $old_posts = Post::whereDateIsBefore('created_at', Carbon::now()->subDays(7)->startOfWeek())
         -> paginate(5)->load(['media', 'category']);
 
         $first_post = Post::orderBy('created_at', 'desc')->paginate(1)->load(['media', 'category']);
