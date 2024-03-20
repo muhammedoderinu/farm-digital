@@ -137,9 +137,9 @@
 						<span class="flex-shrink-0 w-2 h-2 uppercase rounded-full dark:bg-violet-400"></span>
 						<span class="text-xs font-bold tracki uppercase">Exclusive</span>
 					</h3>
-					<a rel="noopener noreferrer" onclick="getContent('{{$old_post->id}}')" class="font-serif hover:underline">{{old_post->title}}</a>
+					<a rel="noopener noreferrer" onclick="getContent('{{$old_post->id}}')" class="font-serif hover:underline">{{$old_post->title}}</a>
 					<p class="text-xs dark:text-gray-400">{{date('M d, Y',$old_post->created_at->timestamp)}}
-						<a rel="noopener noreferrer" href="#" class="hover:underline dark:text-violet-400">{{old_post->author}}</a>
+						<a rel="noopener noreferrer" href="#" class="hover:underline dark:text-violet-400">{{$old_post->author}}</a>
 					</p>
 				</div>
 				@endforeach
